@@ -1,0 +1,141 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ['class'],
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+    '*.{js,ts,jsx,tsx,mdx}',
+  ],
+  prefix: '',
+  theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
+    screens: {
+      xs: '475px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
+    extend: {
+      fontFamily: {
+        'product-sans': ['var(--font-product-sans)', 'Arial', 'sans-serif'],
+        'be-vietnam-pro': ['var(--font-be-vietnam-pro)', 'Arial', 'sans-serif'],
+        inter: ['var(--font-inter)', 'Arial', 'sans-serif'],
+      },
+      colors: {
+        'academy-orange': '#FF8000',
+        'white-1': '#FFFFFF',
+        'brown-1': '#5b3b1b',
+        'black-1': '#000000',
+        'black-2': '#abafb1',
+        'black-3': '#1e1e1e',
+        'ash-2': '#f6f6f6',
+        'white-2': '#f0f0f1',
+        'academy-orange-light': '#FF9500',
+        'badge-orange-border': '#FF7A00',
+        'badge-orange-bg': '#FFF7F0',
+        'tab-inactive-bg': '#F4F5F7',
+        'tab-inactive-text': '#888888',
+        'ash-1': '#abafb1',
+        'neutrals-9': '#464553',
+        'neutrals-8': '#5B5966',
+        'neutrals-11': '#201F30',
+        'neutrals-12': '#201F37',
+        'neutrals-10': '#282637',
+        'black-4': '#5E6366',
+        'leadway-orange': '#F15A24',
+        'orange-warning': '#ff9933',
+        'leadway-orange-light': '#F7ebe0',
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+        wave: {
+          '0%': { transform: 'rotate(0deg)' },
+          '10%': { transform: 'rotate(14deg)' },
+          '20%': { transform: 'rotate(-8deg)' },
+          '30%': { transform: 'rotate(14deg)' },
+          '40%': { transform: 'rotate(-4deg)' },
+          '50%': { transform: 'rotate(10deg)' },
+          '60%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(0deg)' },
+        },
+        'fade-slide-in': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        bounceHover: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
+        },
+        shakeHover: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '25%': { transform: 'translateX(-5px)' },
+          '75%': { transform: 'translateX(5px)' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        wave: 'wave 1.5s infinite',
+        'fade-slide-in': 'fade-slide-in 0.5s ease-out forwards',
+        bounceHover: 'bounceHover 0.4s ease-in-out',
+        shakeHover: 'shakeHover 0.4s ease-in-out',
+      },
+    },
+  },
+  plugins: [require('tailwindcss-animate')],
+};
